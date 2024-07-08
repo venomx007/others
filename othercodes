@@ -1,0 +1,230 @@
+prime number..................
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int n,f=0;
+    printf("enter your num\n");
+    scanf("%d",&n);
+
+    if (n>1)
+    {
+    
+        for (int i = 2; i <= sqrt(n); i++)
+        {
+            if(n%i==0)
+            f=1;
+        }
+
+        if (f==1)
+        printf("\nit is not a prime number");
+        else if(f==0)
+        printf("\nit is a prime number");
+    }
+    else
+    printf("it is not a prime number");
+    
+    return 0;
+}
+
+
+
+factorial....................
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n,fac=1;
+
+    printf("enter the num\n");
+    scanf("%d",&n);
+    for (int i = 1; i <= n; i++)
+    {
+        fac*=i;
+    }
+    printf("the value of is %d",fac);
+    
+    return 0;
+}
+
+
+
+mean sd...................
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	float a[100],s=0,sq=0,mn,sd;
+	int n;
+	scanf("%d",&n);
+
+
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%f",&a[i]);
+	}
+
+
+	for (int i = 0; i < n; i++)
+	{
+		s=s+a[i];
+		sq=sq+a[i]*a[i];
+	}
+
+	mn=s/n;
+	sd=sqrt(sq/n-mn*mn);
+
+	printf("mean = %f      sd = %f",mn,sd);
+	
+	
+	return 0;
+}
+
+
+
+accending/decending.................
+
+
+#include <stdio.h>
+
+int main()
+{
+    int s,a[100],n;
+    scanf("%d",&n);
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i+1; j < n; j++)
+        {
+        if (a[i]>a[j])
+            {
+                s=a[i];
+                a[i]=a[j];
+                a[j]=s;
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d",a[i]);
+    }
+    
+    
+    return 0;
+}
+
+
+
+mode................
+
+
+#include <stdio.h>
+
+int main()
+{
+    float a[100],t,mode;
+    int n;
+    scanf("%d",&n);
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%f",&a[i]);
+    }
+
+    for (int i = 0; i < n; i++)
+    for (int j = i+1; j < n; j++)
+    if(a[i]>a[j]){
+        t=a[i];
+        a[i]=a[j];
+        a[j]=t;
+    }
+        
+    
+    for (int i = 0; i < n; i++)
+    {
+        printf("%f  ",a[i]);
+    }
+    
+    if (n%2==0)
+    {
+        mode=(a[n/2]+a[n/2+1])/2;
+    }
+    else
+    mode=a[(n+1)/2];
+
+    printf("mode = %f",mode);
+     
+    return 0;
+}
+
+
+
+
+e^x.............................
+
+
+#include <stdio.h>
+
+int main()
+{
+    float x,t=1,s=1;
+    int n;
+    scanf("%d%f",&n,&x);
+
+    for (int i = 1; i < n; i++)
+    {
+        t=t*x/i;
+        s+=t;
+    }
+
+    printf("value of e^x = %f ",s);
+    
+    return 0;
+}
+
+
+
+
+fibonacci.....................
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n0=0,n1=1,n,m;
+
+    scanf("%d",&m);
+
+    printf("%d  ",n0);
+    printf("%d  ",n1);
+
+    for (int i = 2; i < m; i++)
+    {
+        n=n0+n1;
+        n0=n1;
+        n1=n;
+        printf("%d  ",n);
+    }
+    
+    return 0;
+}
+
+
+
+
